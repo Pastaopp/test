@@ -1,4 +1,4 @@
-local types = require(script.Parent.types)
+local types = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pastaopp/test/refs/heads/main/_types.lua"))()
 
 local Utility = {}
 
