@@ -5,7 +5,7 @@ local typesr = request({
 })
 
 local utilityr = request({
-	Url = "https://raw.githubusercontent.com/Pastaopp/test/refs/heads/main/_utility.luaa",
+	Url = "https://raw.githubusercontent.com/Pastaopp/test/refs/heads/main/_utility.lua",
 	Method = "GET",
 	Headers = {}
 })
