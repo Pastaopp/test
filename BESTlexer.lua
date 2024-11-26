@@ -49,7 +49,9 @@ local COMMENT_PLAIN = "%-%-.-\n" --Completed Singleline-Comment
 local COMMENT_INCOMP = "%-%-.*" --Incompleted Singleline-Comment
 -- local TYPED_VAR = ":%s*([%w%?%| \t]+%s*)" --Typed variable, parameter, function
 
-local lang = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pastaopp/test/refs/heads/main/language.lua"))()
+local lang
+local langr = request({Url = "https://raw.githubusercontent.com/Pastaopp/test/refs/heads/main/_language.lua", Method = "GET", Headers = {}})
+lang = loadstring(langr.Body)()
 local lua_keyword = lang.keyword
 local lua_builtin = lang.builtin
 local lua_libraries = lang.libraries
