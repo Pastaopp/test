@@ -1,9 +1,9 @@
-local types = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pastaopp/test/refs/heads/main/types.lua"))()
-local utility = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pastaopp/test/refs/heads/main/utility.lua"))()
-local theme = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pastaopp/test/refs/heads/main/theme.lua"))()
+local types = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pastaopp/test/refs/heads/main/_types.lua"))()
+local utility = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pastaopp/test/refs/heads/main/_utility.lua"))()
+local theme = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pastaopp/test/refs/heads/main/__theme.lua"))()
 
 local Highlighter = {
-	defaultLexer = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pastaopp/test/refs/heads/main/lexer.lua"))() :: types.Lexer,
+	defaultLexer = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pastaopp/test/refs/heads/main/_lexer.lua"))() :: types.Lexer,
 
 	_textObjectData = {} :: { [types.TextObject]: types.ObjectData },
 	_cleanups = {} :: { [types.TextObject]: () -> () },
