@@ -10,7 +10,9 @@ local DEFAULT_TOKEN_COLORS = {
 	["custom"] = Color3.fromRGB(119, 122, 255),
 }
 
-local types = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pastaopp/test/refs/heads/main/_types.lua"))()
+local types
+local typesr = request({Url = "https://raw.githubusercontent.com/Pastaopp/test/refs/heads/main/_types.lua", Method = "GET", Headers = {}})
+types = loadstring(typesr.Body)()
 
 local Theme = {
 	tokenColors = {},
