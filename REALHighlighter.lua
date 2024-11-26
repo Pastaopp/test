@@ -1,13 +1,42 @@
-local types = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pastaopp/test/refs/heads/main/_types.lua"))()
-local utility = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pastaopp/test/refs/heads/main/_utility.lua"))()
-local theme = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pastaopp/test/refs/heads/main/__theme.lua"))()
+local typesr = request({
+	Url = "https://raw.githubusercontent.com/Pastaopp/test/refs/heads/main/_types.lua",
+	Method = "GET",
+	Headers = {}
+})
+
+local utilityr = request({
+	Url = "https://raw.githubusercontent.com/Pastaopp/test/refs/heads/main/_utility.luaa",
+	Method = "GET",
+	Headers = {}
+})
+
+local themer = request({
+	Url = "https://raw.githubusercontent.com/Pastaopp/test/refs/heads/main/__theme.lua",
+	Method = "GET",
+	Headers = {}
+})
+
+local lexerr = request({
+	Url = "https://raw.githubusercontent.com/Pastaopp/test/refs/heads/main/_lexer.lua",
+	Method = "GET",
+	Headers = {}
+})
+
+local types
+local utility
+local theme
 
 local Highlighter = {
-	defaultLexer = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pastaopp/test/refs/heads/main/_lexer.lua"))() :: types.Lexer,
+	defaultLexer = "" :: types.Lexer,
 
 	_textObjectData = {} :: { [types.TextObject]: types.ObjectData },
 	_cleanups = {} :: { [types.TextObject]: () -> () },
 }
+
+types = loadstring(typesr.Body)()
+utility = loadstring(utilityr.Body)()
+theme = loadstring(themer.Body)()
+Highlighter.defaultLexer = loadstring(lexerr.Body)()
 
 --[[
 	Gathers the info that is needed in order to set up a line label.
